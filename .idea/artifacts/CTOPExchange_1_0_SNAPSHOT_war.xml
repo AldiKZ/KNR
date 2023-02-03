@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="CTOPExchange-1_0-SNAPSHOT_war">
+    <output-path>$PROJECT_DIR$/out/artifacts/CTOPExchange_1_0_SNAPSHOT_war</output-path>
+    <root id="archive" name="CTOPExchange-1_0-SNAPSHOT_war.war">
+      <element id="file-copy" path="$PROJECT_DIR$/CTOPExchange-1.0-SNAPSHOT.war" />
+    </root>
+  </artifact>
+</component>

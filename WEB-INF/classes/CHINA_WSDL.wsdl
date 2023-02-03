@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.exchangeData.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ExchangeService" targetNamespace="http://www.exchangeData.com/">
+	<wsdl:types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.exchangeData.com/" elementFormDefault="unqualified" targetNamespace="http://www.exchangeData.com/" version="1.0">
+
+			<xs:element name="getExchangeDataToChina" type="tns:getExchangeDataToChina"/>
+
+			<xs:element name="getExchangeDataToChinaResponse" type="tns:getExchangeDataToChinaResponse"/>
+
+			<xs:complexType name="getExchangeDataToChina">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="json" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="getExchangeDataToChinaResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="return" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="getExchangeDataToChina">
+		<wsdl:part element="tns:getExchangeDataToChina" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getExchangeDataToChinaResponse">
+		<wsdl:part element="tns:getExchangeDataToChinaResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="ExchangeService">
+		<wsdl:operation name="getExchangeDataToChina">
+			<wsdl:input message="tns:getExchangeDataToChina" name="getExchangeDataToChina">
+			</wsdl:input>
+			<wsdl:output message="tns:getExchangeDataToChinaResponse" name="getExchangeDataToChinaResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ExchangeServiceSoapBinding" type="tns:ExchangeService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getExchangeDataToChina">
+			<soap:operation soapAction="" style="document"/>
+			<wsdl:input name="getExchangeDataToChina">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getExchangeDataToChinaResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ExchangeService">
+		<wsdl:port binding="tns:ExchangeServiceSoapBinding" name="ExchangeServiceImplPort">
+			<soap:address location="http://10.1.0.165/soap/exchangeService"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

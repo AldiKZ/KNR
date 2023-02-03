@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<services>
+    <webservice name="{http://esepshi.kz/}ExchangeService" type="JAX-WS">
+        <endpoint name="ExchangeServiceImplPort">
+            <operation name="getExchangeDataToKz"/>
+            <operation name="getExchangeData"/>
+        </endpoint>
+    </webservice>
+    <webserviceClient name="{http://innoforce.kz/tais675}ExchangeServiceService" type="JAX-WS">
+        <endpoint name="ExchangeServiceSoap11">
+            <operation name="getExchangeData"/>
+        </endpoint>
+    </webserviceClient>
+    <webserviceClient name="{http://ctop.client.soapclient.astana1.kgd.efc.kz/}CtopChinaEndpointService" type="JAX-WS">
+        <endpoint name="CtopChinaEndpointPort">
+            <operation name="getExchangeData"/>
+            <operation name="getExchangeDataToKz"/>
+        </endpoint>
+    </webserviceClient>
+    <webserviceClient name="{http://ctop.exchange.continent.cusdep.customs.gov.cn/}exchangeService" type="JAX-WS">
+        <endpoint name="CtopKzDataAcceptServiceImplPort">
+            <operation name="getExchangeData"/>
+        </endpoint>
+    </webserviceClient>
+</services>
